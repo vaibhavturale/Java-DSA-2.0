@@ -33,7 +33,7 @@ public class FrequencyOfCharacter {
         //or
 
         for(Map.Entry<Character, Integer> entry: charCount.entrySet()){
-            System.out.print(entry.getKey() + "" + entry.getValue());
+            System.out.print(entry.getKey() +" "+ entry.getValue());
         }
     }
 }

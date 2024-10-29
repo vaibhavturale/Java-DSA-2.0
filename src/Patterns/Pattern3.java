@@ -13,11 +13,16 @@ public class Pattern3 {
       */
 
     static void printPattern3(){
-        for (int i=2;i<=4;i++){
-            for (int j=2;j<=i+1;j++){
-                System.out.print(i*2);
+        int row=3;
+        int startNumber=4;
+
+        for (int i=1;i<=row;i++){
+
+            for (int j=1;j<=i+1;j++){
+                System.out.print(startNumber);
             }
             System.out.println();
+            startNumber=startNumber+2;
         }
     }
 }
