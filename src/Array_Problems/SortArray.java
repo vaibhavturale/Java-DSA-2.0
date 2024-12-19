@@ -2,27 +2,30 @@ package Array_Problems;
 
 public class SortArray {
     public static void main(String[] args) {
-        int[] arr = {5, 3, 8, 4, 2};
-//        sortArray(arr);
+
+        int[] arr= new int[]{3,2,4,23,6,55,7,9,11};
+        int[] sortedArray=sortArray(arr);
+
+        for (int num: sortedArray){
+            System.out.print(num+ " ");
+        }
+        System.out.println();
     }
     /*
     * int[] arr= new int[] {6,3,2,5,7,9,1};
     * */
-    static void sortArray(int[] arr){
+    static int[] sortArray(int[] arr){
 
-        for (int lastIndex= arr.length; lastIndex > 0; lastIndex--) {
-            int i= 0;
-            int j= i+1;
+        for(int endIndex=arr.length-1; endIndex>=0; endIndex--){
 
-            while (j< lastIndex) {
-                if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                    i++;
-                    j++;
+            for(int i=0; i<endIndex; i++){
+                if (arr[i]>arr[i+1]){
+                    int temp= arr[i];
+                    arr[i]= arr[i+1];
+                    arr[i+1]= temp;
                 }
             }
         }
+        return arr;
     }
 }

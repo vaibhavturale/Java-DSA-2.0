@@ -3,24 +3,25 @@ package Array_Problems;
 public class Find_LargestElement {
     public static void main(String[] args) {
 
-        int[] arr= new int[]{3,2,4,23,6,55,7,9,11};
-        int largeest= findLargest(arr);
-        System.out.println(largeest);
+        int[] arr={5,6,3,2,8,7,9,11,40,33};
+        sortArray(arr);
+        findSecondHighest(arr);
     }
 
-    static int findLargest(int[] arr){
+    static void sortArray(int[] arr){
 
-//        int max=arr[0];
-//        for (int i=0; i<arr.length; i++){
-//            max=Math.max(max, arr[i]);
-//        }
-//        return max;
-        int max=arr[0];
-        for (int i=0;i<arr.length;i++){
-            if(arr[i] > max){
-                max= arr[i];
+        for (int endIndex= arr.length-1; endIndex>=0; endIndex--){
+            for (int i=0; i<endIndex; i++){
+                if (arr[i] > arr[i+1]){
+                    int temp= arr[i];
+                    arr[i]= arr[i+1];
+                    arr[i+1]= temp;
+                }
             }
         }
-        return max;
     }
+    static void findSecondHighest(int[] arr){
+        System.out.println("Second Largest Element: "+ arr[arr.length-2]);
+    }
+
 }
