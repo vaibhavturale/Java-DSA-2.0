@@ -5,21 +5,26 @@ import java.util.Arrays;
 public class Find_SecondLargest {
 
     public static void main(String[] args) {
-        int[] arr= new int[]{1,2,4,23,22,12,5,7,9,25};
-        int largest= findSecondLargest(arr);
-        System.out.println(largest);
+        int[] arr={5,6,3,2,8,7,9,11,40,33};
+        sortArray(arr);
+        findSecondHighest(arr);
     }
 
-    static int findSecondLargest(int[] arr){
-        int n = arr.length;
+    static void sortArray(int[] arr){
 
-        Arrays.sort(arr);
-        for (int i = n - 2; i >= 0; i--) {
-
-            if (arr[i] != arr[n - 1]) {
-                return arr[i];
+        for (int endIndex= arr.length-1; endIndex>=0; endIndex--){
+            for (int i=0; i<endIndex; i++){
+                if (arr[i] > arr[i+1]){
+                    int temp= arr[i];
+                    arr[i]= arr[i+1];
+                    arr[i+1]= temp;
+                }
             }
         }
-        return -1;
     }
+    static void findSecondHighest(int[] arr){
+        System.out.println("Second Largest Element: "+ arr[arr.length-2]);
+    }
+
+
 }
