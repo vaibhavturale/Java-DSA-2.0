@@ -8,7 +8,7 @@ public class FrequencyOfCharacter {
 
     public static void main(String[] args) {
 
-        String s="heeello";
+        String s="heeello hey";
         findFrequency(s);
     }
     /*
@@ -21,11 +21,12 @@ public class FrequencyOfCharacter {
 
         for (int i=0;i<s.length();i++){
             Character ch= s.charAt(i);
-
-            if (charCount.containsKey(ch)){
-                charCount.put(ch, charCount.get(ch)+1);
-            }else {
-                charCount.put(ch, 1);
+            if (ch !=' ') {               //Ignore spaces
+                if (charCount.containsKey(ch)) {
+                    charCount.put(ch, charCount.get(ch) + 1);
+                } else {
+                    charCount.put(ch, 1);
+                }
             }
         }
         System.out.println(charCount);
@@ -33,7 +34,7 @@ public class FrequencyOfCharacter {
         //or
 
         for(Map.Entry<Character, Integer> entry: charCount.entrySet()){
-            System.out.print(entry.getKey() +" "+ entry.getValue());
+            System.out.print(entry.getKey() +""+ entry.getValue()+" ");
         }
     }
 }
