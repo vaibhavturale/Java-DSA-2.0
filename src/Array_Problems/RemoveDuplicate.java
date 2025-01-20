@@ -17,14 +17,9 @@ public class RemoveDuplicate {
     static Set<Integer> removeDuplicate(int[] arr){
 
         Set<Integer> removeDuplicate= new HashSet<>();
-        List<Integer> addDuplicate= new ArrayList<>();
 
-        for (int i=0; i<arr.length; i++){
-            if (removeDuplicate.contains(arr[i])){
-                addDuplicate.add(arr[i]);
-            }else {
-                removeDuplicate.add(arr[i]);
-            }
+        for (int num: arr){
+            removeDuplicate.add(num);
         }
         return removeDuplicate;
     }
