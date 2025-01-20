@@ -4,14 +4,13 @@ public class Find_Missing_Number {
 
     public static void main(String[] args) {
         int[] arr= new int[] {1,5,6,8,2,7,3,4,10};
-        findMissingNum(arr);
+        int num=10;
+        findMissingNum(arr, num);
     }
 
-    static void findMissingNum(int[] arr){
+    static void findMissingNum(int[] arr, int n){
 
-        int n=10;
-        int expectedSum= n * (n+1) /2;
-
+        int expectedSum= (n * (n+1)) /2;  //(n * (n+1))/2   == 55
         int actualSum=0;
         for(int num: arr){
             actualSum= actualSum+ num;
